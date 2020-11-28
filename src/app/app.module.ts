@@ -9,13 +9,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
-    AppComponent
-  
-   
-=======
+
     AppComponent,
->>>>>>> 5872da3268eaa2f5a1d8b6da94db5f12ad8d0992
+
+
   ],
   imports: [
     BrowserModule,
