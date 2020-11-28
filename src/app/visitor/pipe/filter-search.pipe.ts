@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterSearchPipe implements PipeTransform {
 
+
   transform(value: any, arg: any): any {
     if(arg === '' || arg.length < 2) return value;
     const resultSearch = [];

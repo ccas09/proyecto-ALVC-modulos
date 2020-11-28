@@ -24,24 +24,19 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SearchDetailScreenComponent } from './screens/search-detail-screen/search-detail-screen.component';
 import { MatPaginator } from '@angular/material/paginator';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FilterSearchPipe } from './pipe/filter-search.pipe';
 
 
 
 @NgModule({
-  declarations: [VisitorHomeScreenComponent, VisitorComponent, NavbarComponent, News2CardComponent, VisitorNoticiasScreenComponent, NewsCardComponent, VisitorInternacionalScreenComponent, VisitorCulturalScreenComponent, VisitorEspectaculosScreenComponent, VisitorSaludScreenComponent, LoginComponent, RegisterComponent, DetailComponent, SearchDetailScreenComponent],
+  declarations: [VisitorHomeScreenComponent, VisitorComponent, NavbarComponent, News2CardComponent, VisitorNoticiasScreenComponent, NewsCardComponent, VisitorInternacionalScreenComponent, VisitorCulturalScreenComponent, VisitorEspectaculosScreenComponent, VisitorSaludScreenComponent, LoginComponent, RegisterComponent, DetailComponent, SearchDetailScreenComponent, FilterSearchPipe],
   imports: [
     CommonModule,
     VisitorRoutingModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    
-    
-    
-    
-   
-    
-    
+    NgxPaginationModule
   ]
 })
 export class VisitorModule { }

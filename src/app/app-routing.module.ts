@@ -11,6 +11,10 @@ const routes: Routes = [
   {path: 'visitor',
   loadChildren: () => import('./visitor/visitor.module').then(m => m.VisitorModule)
   } ,
+
+  {path: 'periodistas',
+  loadChildren: () => import('./periodistas/periodistas.module').then(m => m.PeriodistasModule)
+  } ,
   
   {
     path: '', redirectTo: 'visitor/home', pathMatch: 'full'

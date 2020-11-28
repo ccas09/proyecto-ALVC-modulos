@@ -12,7 +12,7 @@ export class SearchDetailScreenComponent implements OnInit {
   public inews: iNews[];
   
   public filterSearch: string = '';
-  public textSearch: string = ' ';
+  public textSearch: string = '';
   public page: number = 1;
 
 

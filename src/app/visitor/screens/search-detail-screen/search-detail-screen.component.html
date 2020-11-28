@@ -14,18 +14,16 @@
 <!-- NOTICIAS -->
 <div class="row mt-5">
     <div class="col-9">
-        <div *ngFor="let news of inews ">
-            <app-news-card [news] = "news"></app-news-card>
+        <div *ngFor="let news of inews | paginate: { itemsPerPage: 10, currentPage: page} | filter: filterSearch">
+            <visitor-news-card [news] ="news"></visitor-news-card> 
         </div>    
     </div>
 </div>
 
-<!-- PAGINACIÓN 
+<!-- PAGINACIÓN -->
 <pagination-controls (pageChange)="page = $event" previousLabel= "Previo" nextLabel= "Siguiente"
 maxSize="5"></pagination-controls>
 </div>
--->
-
 
 <!-- FOOTER -->
 <app-footer></app-footer>
