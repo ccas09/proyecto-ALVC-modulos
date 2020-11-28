@@ -32,7 +32,7 @@ const routes: Routes = [
         component: CrearNoticiaComponent,
       },
       {
-        path: 'noticias/editar',
+        path: 'noticias/editar/:idNoticia',
         component: EditarNoticiaComponent,
       },
 
@@ -52,7 +52,7 @@ const routes: Routes = [
         path: 'categorias/editar',
         component: EditarNoticiaComponent,
       },
-      { path: '**', redirectTo: '/admin' },
+      //{ path: '**', redirectTo: '/admin' },
     ],
   },
 ];

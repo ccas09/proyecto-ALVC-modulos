@@ -12,7 +12,7 @@ export class CrearNoticiaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(noticia) {
-    console.log('parent: ', noticia)
+  crearNoticia(noticia) {
+    console.log('Crear: ', noticia) // Llamar al backend
   }
 }

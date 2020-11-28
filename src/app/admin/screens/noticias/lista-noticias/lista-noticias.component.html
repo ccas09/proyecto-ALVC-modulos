@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="row "> <!-- esto crea una fila--> 
+    <div class="col-md-2 margen" >
+      <button type="submit"  class="btn btn-success" [routerLink]="['/admin/noticias/crear']">Agregar noticia</button >
+      <div style="margin-top: 20px">
+      </div>
+    </div> 
+  </div>
+</div>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="titleCard">
@@ -23,8 +33,8 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element"> 
-        editar
-        eliminar
+        <a class="text-muted" [routerLink] = "['/admin/noticias/editar/' + element._id]">Editar</a>
+        eliminar <!-- Pendiente con BD-->
       </td>
     </ng-container>
   
