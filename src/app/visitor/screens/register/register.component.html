@@ -1,75 +1,101 @@
+<!--EMPIEZA EL BODY-->
 <body>
   
-    <!--SUBTITULO-->   
-    <div class="container-fluid text-center">
-        <div class="row">
-          <div class="col-md-12">
-             <div class="mx-auto">
-                <h3> Regístrate!</h3>
-              </div>
+  <!--SUBTITULO-->   
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-md-12">
+         <div class="mx-auto">
+            <h3> Regístrate!</h3>
           </div>
-        </div>
       </div>
+    </div>
+  </div>
+      
+  <div class="container-fluid">
+    <form (Register)= "Register()" [formGroup]= "formularioRegistrar">
+        <div class="container">
           
-      <div class="container-fluid">
-        <form (Register)= "Register()" [formGroup]= "formularioRegistrar">
-            <div class="container">
-              
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="p">
-                   <!-- <form > -->
-                      <div class="form-group w-50">
-                        <label for="exampleFormControlInput1">Correo Electrónico</label>
-                        <input type="email" formControlName="correoElectronico" class="form-control" id="exampleFormControlInput1" placeholder="nombre@example.com">
-                      </div>
-              <!--    </form> -->
-                  <!--   <form >-->
-                      <div class="form-group w-50">
-                        <label for="exampleFormControlInput1">Nombre y Apellido</label>
-                        <input type="nombreYapellido" formControlName="nombreYapellido" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Nombre Apellido">
-                      </div>
-                 <!--    </form> -->
-                   <!--    <form >-->
-                      <div class="form-group w-50">
-                        <label for="exampleFormControlInput1">Nombre de Usuario</label>
-                        <input type="usuarioName" formControlName="nombreDeUsuario" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Usuario_555">
-                      </div>
-                  <!--    </form> -->
-                  <!--   <form >-->
-                      <div class="form-group w-50">
-                        <label for="exampleFormControlInput1">Contraseña</label>
-                        <input type="contraseña" formControlName="contraseña" class="form-control" id="exampleFormControlInput1" placeholder="Debe tener una letra mayúscula y un carácter no alfanumérico">
-                      </div>
-                  <!--   </form> -->
-                  </div>
-                </div>   
-              </div> 
-          </div>
-            
-    
-            <!---->
-              <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-          <div class="container">
-            <div class="row "> <!-- esto crea una fila--> 
-              <div class="col-md-2 margenHermoso" >
-                <button type="submit" class="btn btn-success">Submit</button>
-                <div style="margin-top: 20px">
-                  <a  [routerLink]="['/visitor/login']" style="color: black;"> ¿Ya tienes una cuenta?</a>
-                </div>
-              </div> 
-              
-             
-                
-              
-    
-            </div>
-                  
-             
-          </div>
-        </form>
-        </div>  
-       
-    <app-footer></app-footer>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="p">
 
-  </body>
+               <!-- <form Correo electrónico > -->
+                <div class="form-group w-50">
+                  <label for="exampleFormControlInput1">Correo Electrónico</label>
+                  <input type="email" formControlName="correoElectronico" class="form-control" id="exampleFormControlInput1" placeholder="nombre@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                </div>
+
+                    <div *ngIf="formularioRegistrar.controls['correoElectronico'].invalid && (formularioRegistrar.controls['correoElectronico'].dirty || formularioRegistrar.controls['correoElectronico'].touched)" class="alert alert-danger">
+                      El correo electrónico ingresado no es válido.
+                    <div *ngIf="formularioRegistrar.controls['correoElectronico'].errors.required">
+                      El correo electrónico es obligatorio.                     
+                    </div>
+                      
+                 </div>
+
+              <!--   <form Nombre y apellido>-->
+                  <div class="form-group w-50">
+                    <label for="exampleFormControlInput1">Nombre y apellido</label>
+                    <input type="nombreYapellido" formControlName="nombreYapellido" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Nombre Apellido">
+                  </div>
+
+                    <div *ngIf="formularioRegistrar.controls['nombreYapellido'].invalid && (formularioRegistrar.controls['nombreYapellido'].dirty || formularioRegistrar.controls['nombreYapellido'].touched)" class="alert alert-danger">
+                    <div *ngIf="formularioRegistrar.controls['nombreYapellido'].errors.required">
+                        El nombre y apellido es obligatorio.
+                      </div>
+                    </div>
+
+              <!--    <form Nombre de usuario>-->
+                  <div class="form-group w-50">
+                    <label for="exampleFormControlInput1">Nombre de Usuario</label>
+                    <input type="usuarioName" formControlName="nombreDeUsuario" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Usuario_555">
+                  </div>
+
+                  <div *ngIf="formularioRegistrar.controls['nombreDeUsuario'].invalid && (formularioRegistrar.controls['nombreDeUsuario'].dirty || formularioRegistrar.controls['nombreDeUsuario'].touched)" class="alert alert-danger">
+                    <div *ngIf="formularioRegistrar.controls['nombreDeUsuario'].errors.required">
+                        El nombre de usuario es obligatorio.
+                      </div>
+                    </div>
+
+              <!--<form Contraseña>-->
+                  <div class="form-group w-50">
+                    <label for="exampleFormControlInput1">Contraseña</label>
+                    <input type="text" name="contraseña" inputmode="verbatim" formControlName="contraseña" class="form-control" id="exampleFormControlInput1" placeholder="Debe tener una letra mayúscula y un carácter no alfanumérico">
+                  </div>
+
+                  <div *ngIf="formularioRegistrar.controls['contraseña'].invalid && (formularioRegistrar.controls['contraseña'].dirty || formularioRegistrar.controls['contraseña'].touched)" class="alert alert-danger">
+                    <div *ngIf="formularioRegistrar.controls['contraseña'].errors.required">
+                        La contraseña es obligatoria.
+                    </div>
+                    
+                    <mat-error *ngIf="formularioRegistrar.controls['contraseña'].hasError('minlength')">
+                      La contraseña no puede tener menos de 5 caracteres</mat-error>
+                      
+                    <mat-error *ngIf="formularioRegistrar.controls['contraseña'].hasError('maxlength')" >
+                      La contraseña no puede tener más de 10 caracteres.</mat-error>
+                  </div>
+                </div>
+            </div>   
+          </div> 
+      </div>
+        
+
+          <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+      <div class="container">
+        <div class="row "> <!-- esto crea una fila--> 
+          <div class="col-md-2 margen" >
+            <button type="submit" [disabled]="formularioRegistrar.invalid" class="btn btn-success">Submit</button>
+            <div style="margin-top: 20px">
+              <a [routerLink]="['login']" style="color: black;"> ¿Ya tienes una cuenta?</a>
+            </div>
+          </div> 
+        </div>
+              
+         
+      </div>
+    </form>
+    </div>  
+          
+<app-footer></app-footer>
+</body>

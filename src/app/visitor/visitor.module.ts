@@ -23,6 +23,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { SearchDetailScreenComponent } from './screens/search-detail-screen/search-detail-screen.component';
 import { MatPaginator } from '@angular/material/paginator';
+<<<<<<< HEAD
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FilterSearchPipe } from './pipe/filter-search.pipe';
 
@@ -30,13 +31,40 @@ import { FilterSearchPipe } from './pipe/filter-search.pipe';
 
 @NgModule({
   declarations: [VisitorHomeScreenComponent, VisitorComponent, NavbarComponent, News2CardComponent, VisitorNoticiasScreenComponent, NewsCardComponent, VisitorInternacionalScreenComponent, VisitorCulturalScreenComponent, VisitorEspectaculosScreenComponent, VisitorSaludScreenComponent, LoginComponent, RegisterComponent, DetailComponent, SearchDetailScreenComponent, FilterSearchPipe],
+=======
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+@NgModule({
+  declarations: [
+    VisitorHomeScreenComponent,
+    VisitorComponent,
+    NavbarComponent,
+    News2CardComponent,
+    VisitorNoticiasScreenComponent,
+    NewsCardComponent,
+    VisitorInternacionalScreenComponent,
+    VisitorCulturalScreenComponent,
+    VisitorEspectaculosScreenComponent,
+    VisitorSaludScreenComponent,
+    LoginComponent,
+    RegisterComponent,
+    DetailComponent,
+    SearchDetailScreenComponent,
+  ],
+>>>>>>> 5872da3268eaa2f5a1d8b6da94db5f12ad8d0992
   imports: [
     CommonModule,
     VisitorRoutingModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     NgxPaginationModule
   ]
+=======
+    MatFormFieldModule,
+  ],
+>>>>>>> 5872da3268eaa2f5a1d8b6da94db5f12ad8d0992
 })
-export class VisitorModule { }
+export class VisitorModule {}
