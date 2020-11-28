@@ -13,7 +13,6 @@ import { SearchDetailScreenComponent } from './screens/search-detail-screen/sear
 import { DetailComponent } from './screens/detail/detail.component';
 
 
-
 const routes: Routes = [
   {path: '', component: VisitorComponent,
   children:[
@@ -50,8 +49,6 @@ const routes: Routes = [
     {
       path: 'detail', component: DetailComponent
     }
-
-
    
   ]
 }

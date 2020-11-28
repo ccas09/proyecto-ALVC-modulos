@@ -2,25 +2,32 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VisitorHomeScreenComponent } from './visitor/screens/visitor-home-screen/visitor-home-screen.component';
 
-
-const routes: Routes = [
-  {path: 'usuario',
-  loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
-  } ,
-
-  {path: 'visitor',
-  loadChildren: () => import('./visitor/visitor.module').then(m => m.VisitorModule)
-  } ,
+const routes: Routes = [  {
   
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
   {
-    path: '', redirectTo: 'visitor/home', pathMatch: 'full'
-  }
- 
+    path: 'usuario',
+    loadChildren: () =>
+      import('./usuario/usuario.module').then((m) => m.UsuarioModule),
+  },
+  {
+    path: 'visitor',
+    loadChildren: () =>
+      import('./visitor/visitor.module').then((m) => m.VisitorModule),
+  },
 
+  {
+    path: '',
+    redirectTo: 'visitor/home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

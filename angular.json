@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "angular-ALVC-noticias"
+  "defaultProject": "angular-ALVC-noticias",
+  "cli": {
+    "analytics": false
+  }
 }

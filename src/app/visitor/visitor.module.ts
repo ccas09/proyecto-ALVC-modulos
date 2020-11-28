@@ -23,25 +23,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { SearchDetailScreenComponent } from './screens/search-detail-screen/search-detail-screen.component';
 import { MatPaginator } from '@angular/material/paginator';
-import {NgxPaginationModule} from 'ngx-pagination';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [VisitorHomeScreenComponent, VisitorComponent, NavbarComponent, News2CardComponent, VisitorNoticiasScreenComponent, NewsCardComponent, VisitorInternacionalScreenComponent, VisitorCulturalScreenComponent, VisitorEspectaculosScreenComponent, VisitorSaludScreenComponent, LoginComponent, RegisterComponent, DetailComponent, SearchDetailScreenComponent],
+  declarations: [
+    VisitorHomeScreenComponent,
+    VisitorComponent,
+    NavbarComponent,
+    News2CardComponent,
+    VisitorNoticiasScreenComponent,
+    NewsCardComponent,
+    VisitorInternacionalScreenComponent,
+    VisitorCulturalScreenComponent,
+    VisitorEspectaculosScreenComponent,
+    VisitorSaludScreenComponent,
+    LoginComponent,
+    RegisterComponent,
+    DetailComponent,
+    SearchDetailScreenComponent,
+  ],
   imports: [
     CommonModule,
     VisitorRoutingModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    
-    
-    
-    
-   
-    
-    
-  ]
+    MatFormFieldModule,
+  ],
 })
-export class VisitorModule { }
+export class VisitorModule {}
