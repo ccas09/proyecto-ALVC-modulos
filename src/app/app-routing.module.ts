@@ -6,7 +6,6 @@ import { VisitorHomeScreenComponent } from './visitor/screens/visitor-home-scree
 
 
 const routes: Routes = [  {
-  
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
@@ -21,13 +20,11 @@ const routes: Routes = [  {
     loadChildren: () =>
       import('./visitor/visitor.module').then((m) => m.VisitorModule),
   },
-  
   {path: 'periodistas',
   loadChildren: () => import('./periodistas/periodistas.module').then(m => m.PeriodistasModule)
   } ,
-
   {
-    path: '',
+    path: '**',
     redirectTo: 'visitor/home',
     pathMatch: 'full',
   },

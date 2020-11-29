@@ -1,5 +1,6 @@
 import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
+import { backend } from '../../../axios';
 import {
   FormGroup,
   FormBuilder,
@@ -16,15 +17,16 @@ import {
 export class RegisterComponent implements OnInit {
   formularioRegistrar: FormGroup;
   constructor(private fb: FormBuilder) {}
-  //nombreDeUsuario: string;
-  //contraseña: string;
+  // nombreDeUsuario: string;
+  // contraseña: string;
 
   ngOnInit(): void {
     this.formularioRegistrar = this.fb.group({
-      nombreYapellido: ['', Validators.required],
-      correoElectronico: ['', Validators.required, Validators.email],
-      nombreDeUsuario: ['', Validators.required],
-      contraseña: [
+      correo: ['', Validators.required, Validators.email],
+      nombre_usuario: ['', Validators.required],
+      apellido_paterno: ['', Validators.required],
+      apellido_materno: ['', Validators.required],
+      password: [
         '',
         [
           Validators.compose([
@@ -37,8 +39,16 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  public Register() {
+  public Register(): void {
     const user = this.formularioRegistrar.value;
     console.log(user);
+    backend.post('usuarios', user)
+      .then(resp => {
+        // TODO: Redireccionar alguna ruta
+        console.log(resp);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }

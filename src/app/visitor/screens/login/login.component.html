@@ -1,7 +1,7 @@
 <body>
     <div class="login-box">
         <h1>Iniciar sesión</h1>
-        <form>
+        <form (ngSubmit)="login()">
             <!--Correo electronico-->
             <label for="Correo electrónico">Correo electrónico</label>
             <input
@@ -9,17 +9,20 @@
                     name="correo"
                     placeholder="nombre@ejemplo.com"
                     required="required"
+                    [(ngModel)]="Correo"
+                    placeholder="Correo"
+                    required="required"
             />
             <!--Clave-->
             <label for="Clave">Clave</label>
 
-            <!---  <input
+            <input
                 type="Clave"
                 name="Clave"
               [(ngModel)]="Clave"
                 placeholder="Clave"
                 required="required"
-            /> -->
+            />
 
             <input
                 type="submit"

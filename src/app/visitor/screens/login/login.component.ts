@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+// import { backend } from '../../../axios';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,20 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
-  login(){
+  login(): void {
     console.log(this.Correo);
     console.log(this.Clave);
+    /* backend.post('usuarios', {
+      nombre_usuario: 'seba'
+    })
+      .then(resp => {
+        console.log(resp);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+      */
   }
   ngOnInit(): void {
   }
-  
 }
